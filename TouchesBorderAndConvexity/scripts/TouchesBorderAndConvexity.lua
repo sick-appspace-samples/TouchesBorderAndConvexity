@@ -2,13 +2,13 @@
 
   Application Name:
   TouchesBorderAndConvexity
-                                                                                             
+
   Summary:
   Finding defects (burr) in extruded metal sheet.
   
   How to Run:
   Starting this sample is possible either by running the app (F5) or
-  debugging (F7+F10). Setting breakpoint on the first row inside the
+  debugging (F7+F10). Setting a breakpoint on the first row inside the
   'main' function allows debugging step-by-step.
   Results can be seen in the image viewer on the DevicePage.
   Restarting the Sample may be necessary to show images after loading the webpage.
@@ -29,7 +29,6 @@ local DELAY = 1000
 
 -- Create viewer
 local viewer = View.create()
-viewer:setID('viewer2D')
 
 -- Setup graphical overlay
 local decoration = View.PixelRegionDecoration.create()
@@ -68,6 +67,7 @@ local function main()
   viewer:present()
   print('App finished.')
 end
+
 Script.register('Engine.OnStarted', main)
 
 --End of Function and Event Scope--------------------------------------------------
