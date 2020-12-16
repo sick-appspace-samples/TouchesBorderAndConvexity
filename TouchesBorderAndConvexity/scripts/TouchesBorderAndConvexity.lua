@@ -28,7 +28,7 @@ print('AppEngine Version: ' .. Engine.getVersion())
 local DELAY = 1000
 
 -- Create viewer
-local viewer = View.create()
+local viewer = View.create('viewer2D1')
 
 -- Setup graphical overlay
 local decoration = View.PixelRegionDecoration.create()
