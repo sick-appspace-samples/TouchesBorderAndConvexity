@@ -7,11 +7,10 @@ print('AppEngine Version: ' .. Engine.getVersion())
 local DELAY = 1000
 
 -- Create viewer
-local viewer = View.create('viewer2D1')
+local viewer = View.create()
 
 -- Setup graphical overlay
-local decoration = View.PixelRegionDecoration.create()
-decoration:setColor(230, 0, 0) -- Red
+local decoration = View.PixelRegionDecoration.create():setColor(230, 0, 0) -- Red
 
 --End of Global Scope-----------------------------------------------------------
 
@@ -39,10 +38,8 @@ local function main()
   local holesNOK = holeFilterNOK:apply(holes, img)
 
   -- Plot a red marker in each NOK hole
-  local imageID = viewer:addImage(img)
-  for _, hole in ipairs(holesNOK) do
-    viewer:addPixelRegion(hole, decoration, nil, imageID)
-  end
+  viewer:addImage(img)
+  viewer:addPixelRegion(holesNOK, decoration)
   viewer:present()
   print('App finished.')
 end
